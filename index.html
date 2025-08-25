@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Radar de Segurança - Banco Nacional</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Radar Caça-Fantasmas 👻🚫</h1>
+        <p>Banco Nacional - Monitoramento em Tempo Real</p>
+        <div class="disclaimer">
+            ⚠️ <strong>Dados Fictícios:</strong> Este é um sistema de demonstração. Todos os dados são simulados e os fantasmas (👻) representam uma metáfora lúdica para malwares.
+        </div>
+    </header>
+
+    <main>
+        <div class="controls">
+            <button class="btn" onclick="openDevicesModal()" aria-label="Abrir tabela de dispositivos">
+                📊 Tabela de Dispositivos
+            </button>
+            <button class="btn secondary" onclick="exportCSV()" aria-label="Exportar dados em CSV">
+                📥 Exportar CSV
+            </button>
+            <button class="btn secondary" onclick="toggleRadar()" aria-label="Pausar/continuar radar">
+                ⏸️ Pausar Radar
+            </button>
+        </div>
+
+        <div class="main-container">
+            <div class="radar-container">
+                <div class="radar" id="radar" role="application" aria-label="Radar de segurança mostrando dispositivos da rede">
+                    <div class="radar-layer layer-1"></div>
+                    <div class="radar-layer layer-2"></div>
+                    <div class="radar-layer layer-3"></div>
+                    <div class="radar-layer layer-4"></div>
+                    <div class="radar-sweep" id="radarSweep"></div>
+                </div>
+            </div>
+
+            <div class="side-panel">
+                <div class="analysis-section">
+                    <h3>🔍 Análise do Dispositivo</h3>
+                    <div id="deviceAnalysis">
+                        <p style="text-align: center; color: #666; padding: 40px;">
+                            Clique em um dispositivo no radar para ver a análise detalhada
+                        </p>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h3>📊 Status da Rede</h3>
+                    <div class="info-row">
+                        <span class="info-label">Dispositivos Seguros:</span>
+                        <span class="info-value" id="safeCount">0</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Dispositivos Inseguros:</span>
+                        <span class="info-value" id="unsafeCount">0</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Última Varredura:</span>
+                        <span class="info-value" id="lastScan">--:--:--</span>
+                    </div>
+                </div>
+
+                <div class="analysis-section">
+                    <h3>📋 Eventos Recentes</h3>
+                    <div class="events-section" id="eventsLog" role="log" aria-label="Log de eventos de segurança"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal da Tabela de Dispositivos -->
+    <div id="devicesModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">📊 Tabela de Dispositivos</h2>
+                <span class="close" onclick="closeDevicesModal()" aria-label="Fechar modal">&times;</span>
+            </div>
+            
+            <div class="filter-section">
+                <input type="text" class="search-input" id="searchInput" placeholder="🔍 Buscar por usuário, IP ou dispositivo..." aria-label="Campo de busca">
+                <select class="filter-select" id="statusFilter" aria-label="Filtrar por status">
+                    <option value="">Todos os Status</option>
+                    <option value="Seguro">✅ Seguro</option>
+                    <option value="Inseguro">👻 Inseguro</option>
+                </select>
+            </div>
+            
+            <table class="devices-table" id="devicesTable" role="table">
+                <thead>
+                    <tr role="row">
+                        <th>Status</th>
+                        <th>Usuário</th>
+                        <th>Dispositivo</th>
+                        <th>SO</th>
+                        <th>IP</th>
+                        <th>Último Acesso</th>
+                        <th>Processos Suspeitos</th>
+                    </tr>
+                </thead>
+                <tbody id="devicesTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <h3 style="color: #00ff88; text-align: center; margin-bottom: 20px;">🛡️ Boas Práticas de Segurança</h3>
+        <div class="security-tips">
+            <div class="tip-card">
+                <h4>🔄 Atualizações</h4>
+                <p>Mantenha sempre o software e sistemas operacionais atualizados com os patches de segurança mais recentes.</p>
+            </div>
+            <div class="tip-card">
+                <h4>🔐 Autenticação</h4>
+                <p>Use autenticação de dois fatores (2FA) em todas as contas críticas para adicionar uma camada extra de proteção.</p>
+            </div>
+            <div class="tip-card">
+                <h4>⚡ Menor Privilégio</h4>
+                <p>Aplique o princípio do menor privilégio: conceda apenas as permissões mínimas necessárias para cada usuário.</p>
+            </div>
+            <div class="tip-card">
+                <h4>📚 Treinamento</h4>
+                <p>Promova treinamentos regulares sobre segurança cibernética para todos os colaboradores.</p>
+            </div>
+        </div>
+        <p style="text-align: center; color: #666; margin-top: 20px;">
+            © 2025 Sistema de Monitoramento de Segurança - Ambiente de Demonstração
+        </p>
+    </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
