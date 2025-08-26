@@ -64,7 +64,7 @@ Incluímos no rodapé dicas importantes:
 - Usar autenticação em duas etapas.  
 - Aplicar o princípio do menor privilégio.  
 ## Acessar
-
+<a href="https://cacafantasma.netlify.app/" target="_blank">Acesse aqui</a>
 ---
 
 ## 👥 Equipe
