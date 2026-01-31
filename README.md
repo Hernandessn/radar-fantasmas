@@ -68,6 +68,6 @@ Incluímos no rodapé dicas importantes:
 ---
 
 ## 👥 Equipe
-Projeto desenvolvido por estudantes do **3º ano do Ensino Médio** durante a Maratona Tech 2025.  
+Projeto desenvolvido por estudantes do **3º ano do Ensino Médio** durante a 1° fase daMaratona Tech 2025.  
 
 
